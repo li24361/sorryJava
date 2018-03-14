@@ -21,15 +21,6 @@ public class SorryJavaApplicationTests {
 	}
 
 	@Test
-	public void testAssRender() throws Exception {
-		Subtitles subtitles = new Subtitles();
-		subtitles.setTemplateName("sorry");
-		subtitles.setSentence(Lists.newArrayList("哈哈","哈哈","哈哈","哈哈","哈哈","哈哈","哈哈","哈哈","哈哈"));
-		String s = service.renderAss(subtitles);
-		System.out.println(s);
-	}
-
-	@Test
 	public void testRender() throws Exception {
 		Subtitles subtitles = new Subtitles();
 		subtitles.setTemplateName("sorry");
