@@ -3,8 +3,6 @@ package com.lzh;
 import com.google.common.collect.Lists;
 import com.lzh.entity.Subtitles;
 import com.lzh.service.GifService;
-import com.lzh.service.QcloudService;
-import com.lzh.service.QiniuService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +16,6 @@ public class SorryJavaApplicationTests {
 	@Autowired
 	GifService service;
 
-	@Autowired
-	QiniuService qiniuService;
-
-	@Autowired
-	QcloudService qcloudService;
-
 	@Test
 	public void contextLoads() {
 	}
@@ -34,15 +26,5 @@ public class SorryJavaApplicationTests {
 		subtitles.setTemplateName("sorry");
 		subtitles.setSentence(Lists.newArrayList("哈哈","哈哈","哈哈","哈哈","哈哈","哈哈","哈哈","哈哈","哈哈"));
 		service.renderGif(subtitles);
-	}
-
-	@Test
-	public void testQiniuUpload() throws Exception {
-		qiniuService.upload("E:\\out.gif");
-	}
-
-	@Test
-	public void testQcloudUpload() throws Exception {
-		qcloudService.upload("E:\\out.gif");
 	}
 }
