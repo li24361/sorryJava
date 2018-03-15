@@ -3,8 +3,11 @@ package com.lzh.service;
 import com.lzh.entity.Subtitles;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
+import lombok.Getter;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Service;
 
 import java.io.FileWriter;
@@ -18,11 +21,14 @@ import java.util.UUID;
  * Created by lizhihao on 2018/3/11.
  */
 @Service
+@Getter
+@Setter
+@ConfigurationProperties(prefix = "cache.template")
 public class GifService {
 
     private static final Logger logger = LoggerFactory.getLogger(GifService.class);
 
-    public static final String tempPath = "/opt/site/cache/";
+    private String tempPath;
 
     public String renderGif(Subtitles subtitles) throws Exception {
         String assPath = renderAss(subtitles);

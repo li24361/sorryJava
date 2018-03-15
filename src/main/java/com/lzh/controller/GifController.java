@@ -2,6 +2,7 @@ package com.lzh.controller;
 
 import com.lzh.entity.Subtitles;
 import com.lzh.service.GifService;
+import com.lzh.service.QcloudService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
@@ -18,19 +19,36 @@ import org.springframework.web.bind.annotation.RestController;
  * Created by lizhihao on 2018/3/11.
  */
 @RestController
-@RequestMapping("/")
+@RequestMapping(path = "/", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE}, method = RequestMethod.POST)
 public class GifController {
 
     @Autowired
-    GifService service;
+    GifService gifService;
+
+    @Autowired
+    QcloudService qcloudService;
 
     @ApiOperation(value = "获取gif", notes = "")
-    @RequestMapping(path = "/gif", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.MULTIPART_FORM_DATA_VALUE}, method = RequestMethod.POST)
+    @RequestMapping(path = "/gif/filePath", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.MULTIPART_FORM_DATA_VALUE}, method = RequestMethod.POST)
+    public String renderGifPath(@RequestBody Subtitles subtitles) throws Exception {
+        String file = gifService.renderGif(subtitles);
+        return file;
+    }
+
+    @ApiOperation(value = "获取gif", notes = "")
+    @RequestMapping(path = "/gif/file", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.MULTIPART_FORM_DATA_VALUE}, method = RequestMethod.POST)
     public ResponseEntity<Resource> renderGif(@RequestBody Subtitles subtitles) throws Exception {
-        String file = service.renderGif(subtitles);
+        String file = gifService.renderGif(subtitles);
         Resource resource = new FileSystemResource(file);
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
                 "attachment; filename=txtx.gif").body(resource);
+    }
+
+    @ApiOperation(value = "获取gif并上传bucket", notes = "")
+    @RequestMapping(path = "/gif/qiniu")
+    public String renderGifAndUpload(@RequestBody Subtitles subtitles) throws Exception {
+        String file = gifService.renderGif(subtitles);
+        return qcloudService.upload(file);
     }
 
 }
