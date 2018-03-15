@@ -5,7 +5,6 @@ import freemarker.template.Configuration;
 import freemarker.template.Template;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.stereotype.Service;
 
 import java.io.FileWriter;
@@ -23,13 +22,12 @@ public class GifService {
 
     private static final Logger logger = LoggerFactory.getLogger(GifService.class);
 
-    public static final String tempPath = "/cache/";
+    public static final String tempPath = "/opt/site/cache/";
 
     public String renderGif(Subtitles subtitles) throws Exception {
         String assPath = renderAss(subtitles);
         String gifPath = Paths.get(tempPath).resolve(UUID.randomUUID() + ".gif").toString();
-        ClassPathResource classPathResource = new ClassPathResource("/static/" + subtitles.getTemplateName());
-        String videoPath = classPathResource.getFile().getAbsolutePath() + "/template.mp4";
+        String videoPath = Paths.get(tempPath).resolve(subtitles.getTemplateName()+"/template.mp4").toString();
         String cmd = String.format("ffmpeg -i %s -r 8 -vf ass=%s,scale=300:-1 -y %s", videoPath, assPath, gifPath);
         logger.info("cmd: {}", cmd);
         try {
@@ -45,8 +43,7 @@ public class GifService {
         Path path = Paths.get(tempPath).resolve(UUID.randomUUID().toString().replace("-", "") + ".ass");
         Configuration cfg = new Configuration(Configuration.VERSION_2_3_27);
         cfg.setDefaultEncoding("UTF-8");
-        ClassPathResource classPathResource = new ClassPathResource("/static/" + subtitles.getTemplateName());
-        cfg.setDirectoryForTemplateLoading(classPathResource.getFile());
+        cfg.setDirectoryForTemplateLoading(Paths.get(tempPath).resolve(subtitles.getTemplateName()).toFile());
         Map<String, Object> root = new HashMap<>();
         Map<String, String> mx = new HashMap<>();
 
