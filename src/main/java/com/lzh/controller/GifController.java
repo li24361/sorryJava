@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.nio.file.Paths;
+
 /**
  * Created by lizhihao on 2018/3/11.
  */
@@ -25,10 +27,10 @@ public class GifController {
     GifService gifService;
 
     @ApiOperation(value = "获取gif", notes = "")
-    @RequestMapping(path = "/gif/filePath", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.MULTIPART_FORM_DATA_VALUE}, method = RequestMethod.POST)
+    @RequestMapping(path = "/gif/filePath", consumes = {MediaType.APPLICATION_JSON_VALUE}, produces = {MediaType.APPLICATION_JSON_VALUE}, method = RequestMethod.POST)
     public String renderGifPath(@RequestBody Subtitles subtitles) throws Exception {
         String file = gifService.renderGif(subtitles);
-        return file;
+        return Paths.get(file).getFileName().toString();
     }
 
     @ApiOperation(value = "获取gif", notes = "")
