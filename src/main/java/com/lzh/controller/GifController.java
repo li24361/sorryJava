@@ -42,4 +42,5 @@ public class GifController {
                 "attachment; filename=txtx.gif").body(resource);
     }
 
+
 }

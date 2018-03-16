@@ -15,7 +15,7 @@ function make_body() {
         body[i] = text;
     }
 
-    return JSON.stringify(body);
+    return JSON.stringify(body.join(','));
 }
 
 function calculate_duration(begin_time) {
@@ -43,7 +43,7 @@ function submit() {
     };
 
     save_input()
-    xhttp.open("POST", "make", true);
+    xhttp.open("POST", "/gif/filePath", true);
     xhttp.send(make_body());
 }
 
