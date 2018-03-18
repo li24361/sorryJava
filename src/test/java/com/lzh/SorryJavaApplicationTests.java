@@ -24,7 +24,7 @@ public class SorryJavaApplicationTests {
 	public void testRender() throws Exception {
 		Subtitles subtitles = new Subtitles();
 		subtitles.setTemplateName("sorry");
-		subtitles.setSentence(Lists.newArrayList("哈哈","哈哈","哈哈","哈哈","哈哈","哈哈","哈哈","哈哈","哈哈"));
+		subtitles.setSentence("");
 		service.renderGif(subtitles);
 	}
 }

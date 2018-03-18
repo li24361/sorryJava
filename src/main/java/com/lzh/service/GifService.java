@@ -1,5 +1,6 @@
 package com.lzh.service;
 
+import com.google.common.base.Splitter;
 import com.lzh.entity.Subtitles;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
@@ -14,6 +15,7 @@ import java.io.FileWriter;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -52,9 +54,9 @@ public class GifService {
         cfg.setDirectoryForTemplateLoading(Paths.get(tempPath).resolve(subtitles.getTemplateName()).toFile());
         Map<String, Object> root = new HashMap<>();
         Map<String, String> mx = new HashMap<>();
-
-        for (int i = 0; i < subtitles.getSentence().size(); i++) {
-            mx.put("sentences" + i, subtitles.getSentence().get(i));
+        List<String> list = Splitter.on(",").splitToList(subtitles.getSentence());
+        for (int i = 0; i < list.size(); i++) {
+            mx.put("sentences" + i, list.get(i));
         }
         root.put("mx", mx);
         Template temp = cfg.getTemplate("template.ftl");

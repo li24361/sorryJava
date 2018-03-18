@@ -14,5 +14,5 @@ public class Subtitles {
 
     private String templateName;
 
-    private List<String> sentence;
+    private String sentence;
 }
