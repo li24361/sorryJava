@@ -1,3 +1,5 @@
+思路是参考[sorry](https://github.com/xtyxtyx/sorry)
+
 # sorryJava
 sorry的java版本
 
@@ -9,13 +11,27 @@ centOS7下ffmpeg安装
 	rpm -Uvh http://li.nux.ro/download/nux/dextop/el7/x86_64/nux-dextop-release-0-5.el7.nux.noarch.rpm
     yum install ffmpeg ffmpeg-devel -y
 
-centOS7 gifsicle 压缩gif 
+centOS7 gifsicle 压缩gif ，暂时不用下载
 
     yum install gifsicle
 
 centOS7安装字体
 
 	yum groupinstall "fonts"
+	
+修改application.properties,换成自己的文件夹
+
+	cache.template.tempPath=/opt/site/cache/
+
+在自己的文件夹下建立sorry文件夹
+下载[template.mp4](http://txtxtx.com.cn/sorry/template.mp4)跟[template.ftl](http://txtxtx.com.cn/sorry/template.ftl)放进去
+	
+	
+打包并运行
+	
+	mvn package -DskipTests
+	java -jar sorry-1.0.0.jar
+	
 
 
 
