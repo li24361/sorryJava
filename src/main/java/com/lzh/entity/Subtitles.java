@@ -15,4 +15,6 @@ public class Subtitles {
     private String templateName;
 
     private String sentence;
+
+    private String mode;
 }
