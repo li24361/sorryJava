@@ -18,7 +18,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<h1>
-				动图制作
+				动图制作Java版
 			</h1>
 		</div>
 	</div>
@@ -191,30 +191,15 @@
 			<p>
 				<div class="alert alert-danger" role="alert">本站只是1MB小水管，速度慢请见谅</div>
 			</p>
-		</div>
-	</div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-	<div class="modal-dialog" role="document">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">生成中</h4>
-			</div>
-			<div class="modal-body">
-				生成ing
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" class="btn btn-primary">Save changes</button>
-			</div>
+			<div id="comment"></div>
 		</div>
 	</div>
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/scripts.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src='//unpkg.com/valine/dist/Valine.min.js'></script>
 </body>
 <script>
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
@@ -223,7 +208,9 @@
 		$('#template').val(e.target.id)
 	})
 	$('#render').bind('click', function () {
+		$('#render').prop('disabled', true);
 		var template = $('#template').val()
+		console.log(template)
 		var inputs = $("input[name='" + template + "_sen']")
 		var all = [];
 		inputs.each(function (i, e) {
@@ -233,7 +220,6 @@
 		var json = {
 			"templateName": template,
 			"sentence": all.join()
-
 		}
 
 		$.ajax({
@@ -241,10 +227,7 @@
 			url: "/gif/filePath",
 			data: JSON.stringify(json),
 			contentType: "application/json",
-			dataType: 'json',
-			beforeSend: function ( xhr ) {
-				$('#render').attr('disable','true');
-			}
+			dataType: 'json'
 		}).done(function (msg) {
 			if (msg.code=='0'){
 				alert("生成成功！: " + msg.result);
@@ -256,22 +239,18 @@
 		}).error(function (jqxhr, textStatus, errorThrown) {
 			alert("人太多了" + errorThrown);
 		}).complete(function () {
-			$('#render').attr('disable','false');
+			$('#render').prop('disabled', false);
 		});
-//		var jqxhr = $.post("/gif/filePath",
-//				{
-//					data: JSON.stringify(json),
-//				},
-//				function () {
-//					alert("success");
-//				})
-//				.success(function () {
-//					alert("second success");
-//				})
-//				.error(function (jqxhr, textStatus, errorThrown) {
-//					alert("人太多了" + errorThrown);
-//				})
-				;
+	});
+	new Valine({
+		el: '#comment' ,
+		notify:false,
+		verify:false,
+		appId: 'MPDAOcDb8Ketrp38sEanS3Bz-gzGzoHsz',
+		appKey: 'caRGLJVeH7TdIUpBD1k2lGcY',
+		placeholder: 'txtxtx',
+		path:window.location.pathname,
+		avatar:'mm'
 	});
 </script>
 </html>
