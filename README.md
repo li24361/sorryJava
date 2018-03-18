@@ -1,8 +1,13 @@
-思路是参考[sorry](https://github.com/xtyxtyx/sorry)
+思路是参考[sorry](https://github.com/xtyxtyx/sorry)，原作是ruby写的，我就撸了个java 轮子
+
+
+[Java版本点击查看](http://txtxtx.com.cn/)
 
 # sorryJava
 sorry的java版本
 
+
+![](http://ww1.sinaimg.cn/large/6efe8aa1ly1fphaxorc98j211i0nywku.jpg)
 
 centOS7下ffmpeg安装
 
