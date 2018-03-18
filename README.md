@@ -35,7 +35,9 @@ centOS7安装字体
 打包并运行
 	
 	mvn package -DskipTests
-	java -jar sorry-1.0.0.jar
+	java -jar sorry-java-1.0.0.jar
+	
+访问 http://ip:8888
 	
 
 
