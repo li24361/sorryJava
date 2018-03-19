@@ -1,7 +1,7 @@
-思路是参考[sorry](https://github.com/xtyxtyx/sorry)，原作是ruby写的，我就撸了个java 轮子
+思路是参考[sorry](https://github.com/xtyxtyx/sorry)，原作是ruby写的，我就撸了个java 轮子，加了一点新功能，可以生成小一点的图片
 
 
-[Java版本点击查看](http://txtxtx.com.cn/)
+[Demo点击查看](http://txtxtx.com.cn/)
 
 # sorryJava
 sorry的java版本
