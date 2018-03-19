@@ -197,17 +197,19 @@
 		<div class="col-md-12">
 			<p>
 				<img id="result" class="center-block img-responsive" src="">
+				<button id="downloadbtn" type="button" class="btn btn-default center-block hidden" aria-label="Left Align">
+					<a id="download" href="#" target="_blank">猛击下载<span class="glyphicon glyphicon-download-alt" aria-hidden="true"></span></a>
+				</button>
 			</p>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<p>
-				<div class="alert alert-success" role="alert">微信中，直接长按可以发送给朋友</div>
-			</p>
-			<div id="comment"></div>
-		</div>
-	</div>
+	<!--<div class="row">-->
+		<!--<div class="col-md-12">-->
+			<!--<p>-->
+				<!--<div class="alert alert-success" role="alert">微信中，直接长按可以发送给朋友</div>-->
+			<!--</p>-->
+		<!--</div>-->
+	<!--</div>-->
 </div>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -225,7 +227,6 @@
 		var $btn = $(this).button('loading')
 		$('#render').prop('disabled', true);
 		var template = $('#template').val()
-		console.log(template)
 		var inputs = $("input[name='" + template + "_sen']")
 		var all = [];
 		inputs.each(function (i, e) {
@@ -247,7 +248,7 @@
 		}).done(function (msg) {
 			if (msg.code=='0'){
 				alert("生成成功！: " + msg.result);
-				$('#result').attr('src', msg.result);
+				$('#download').attr('href', msg.result);
 			} else {
 				alert("服务器爆掉了，请稍后再试！赞赏给作者点鼓励吧。");
 				$('#result').attr('src', 'http://p5m79jjxo.bkt.clouddn.com/money.jpg');
@@ -256,23 +257,14 @@
 			alert("服务器爆掉了，请稍后再试！赞赏给作者点鼓励吧。");
 			$('#result').attr('src', 'http://p5m79jjxo.bkt.clouddn.com/money.jpg');
 		}).complete(function () {
-//			$btn.button('reset')
-//			$('#render').prop('disabled', false);
+			$btn.button('reset')
+			$('#render').prop('disabled', false);
+			$('#downloadbtn').removeClass('hidden')
 		});
 	});
-	$('#result').load(function() {
-		$('#render').button('reset')
-		$('#render').prop('disabled', false);
-	});
-	new Valine({
-		el: '#comment' ,
-		notify:false,
-		verify:false,
-		appId: 'MPDAOcDb8Ketrp38sEanS3Bz-gzGzoHsz',
-		appKey: 'caRGLJVeH7TdIUpBD1k2lGcY',
-		placeholder: '欢迎留言提供新素材',
-		path:window.location.pathname,
-		avatar:'mm'
-	});
+//	$('#result').load(function() {
+//		$('#render').button('reset')
+//		$('#render').prop('disabled', false);
+//	});
 </script>
 </html>
