@@ -30,7 +30,7 @@ centOS7安装字体
 	cache.template.tempPath=/opt/site/cache/
 
 在自己的文件夹下建立sorry文件夹
-下载[template.mp4](http://txtxtx.com.cn/sorry/template.mp4)跟[template.ftl](http://txtxtx.com.cn/sorry/template.ftl)放进去
+下载[template.mp4](http://118.24.58.55/sorry/template.mp4)跟[template.ftl](http://118.24.58.55/sorry/template.ftl)放进去
 	
 	
 打包并运行
