@@ -1,5 +1,6 @@
 package com.lzh.service;
 
+import com.google.common.base.Preconditions;
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;
 import com.qcloud.cos.auth.BasicCOSCredentials;
@@ -38,7 +39,11 @@ public class QcloudService {
 
     private String domainOfBucket;
 
+    private String enable;
+
     public String upload (String localFilePath) {
+        Preconditions.checkArgument("true".equals(enable),"不允许上传");
+
         COSCredentials cred = new BasicCOSCredentials(accessKey, secretKey);
         // 2 设置bucket的区域, COS地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
         ClientConfig clientConfig = new ClientConfig(new Region("ap-chengdu"));

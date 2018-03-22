@@ -39,8 +39,12 @@ public class GifController {
         ConcurrentMap<String, String> map = Maps.newConcurrentMap();
         try{
             String file = gifService.renderGif(subtitles);
+            String filePath = Paths.get(file).getFileName().toString();
+            if ("true".equals(qcloudService.getEnable())) {
+                filePath = qcloudService.upload(file);
+            }
             map.put("code", "0");
-            map.put("result", Paths.get(file).getFileName().toString());
+            map.put("result", filePath);
         } catch (Exception e) {
             map.put("code", "1");
             map.put("result", e.getMessage());
@@ -56,12 +60,4 @@ public class GifController {
         return ResponseEntity.ok().header(HttpHeaders.CONTENT_DISPOSITION,
                 "attachment; filename=txtx.gif").body(resource);
     }
-
-    @ApiOperation(value = "获取gif并上传bucket", notes = "")
-    @RequestMapping(path = "/gif/qcloud")
-    public String renderGifAndUpload(@RequestBody Subtitles subtitles) throws Exception {
-        String file = gifService.renderGif(subtitles);
-        return qcloudService.upload(file);
-    }
-
 }

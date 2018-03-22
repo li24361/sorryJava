@@ -263,7 +263,7 @@
 				<input type="radio" name="inlineRadioOptions" id="inlineRadio1" value="simple" alt="小文件，质量低"> 小图(表情包)
 			</label>
 			<label class="radio-inline">
-				<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="normal" checked alt="大文件，质量高"> 大图（发帖发微博）
+				<input type="radio" name="inlineRadioOptions" id="inlineRadio2" value="normal" checked alt="大文件，质量高"> 大图（论坛微博）
 			</label>
 		</div>
 		<br><br>
@@ -329,14 +329,15 @@
 		var template = $('#template').val()
 		var inputs = $("input[name='" + template + "_sen']")
 		var all = [];
-		var notchange = true;
+		var ischange = false;
 		inputs.each(function (i, e) {
 			e.value = e.value === '' ? e.placeholder : e.value
-            notchange = e.value !== '';
+            if (e.value !== e.placeholder) {
+                ischange = true;
+            }
 			all.push(e.value)
 		})
-        console.log(notchange);
-        if (notchange){
+        if (!ischange){
             alert("生成成功！快去看看吧！");
             $('#download').attr('href', "http://p5m79jjxo.bkt.clouddn.com/"+template+".gif");
             $btn.button('reset')
