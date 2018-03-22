@@ -3,6 +3,7 @@ package com.lzh.controller;
 import com.google.common.collect.Maps;
 import com.lzh.entity.Subtitles;
 import com.lzh.service.GifService;
+import com.lzh.service.QcloudService;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
@@ -29,6 +30,9 @@ public class GifController {
     @Autowired
     GifService gifService;
 
+    @Autowired
+    QcloudService qcloudService;
+
     @ApiOperation(value = "获取gif", notes = "")
     @RequestMapping(path = "/gif/filePath", method = RequestMethod.POST)
     public Map renderGifPath(@RequestBody Subtitles subtitles){
@@ -53,5 +57,11 @@ public class GifController {
                 "attachment; filename=txtx.gif").body(resource);
     }
 
+    @ApiOperation(value = "获取gif并上传bucket", notes = "")
+    @RequestMapping(path = "/gif/qiniu")
+    public String renderGifAndUpload(@RequestBody Subtitles subtitles) throws Exception {
+        String file = gifService.renderGif(subtitles);
+        return qcloudService.upload(file);
+    }
 
 }

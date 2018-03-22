@@ -1,8 +1,8 @@
 package com.lzh;
 
-import com.google.common.collect.Lists;
 import com.lzh.entity.Subtitles;
 import com.lzh.service.GifService;
+import com.lzh.service.QcloudService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +16,9 @@ public class SorryJavaApplicationTests {
 	@Autowired
 	GifService service;
 
+	@Autowired
+	QcloudService qcloudService;
+
 	@Test
 	public void contextLoads() {
 	}
@@ -27,5 +30,11 @@ public class SorryJavaApplicationTests {
 		subtitles.setSentence("haha1,haha1,haha1,haha1,haha1,haha1,haha1,haha1,haha1");
 		subtitles.setMode("simple");
 		service.renderGif(subtitles);
+	}
+
+
+	@Test
+	public void testQcloudUpload() throws Exception {
+		qcloudService.upload("E:\\out.gif");
 	}
 }
