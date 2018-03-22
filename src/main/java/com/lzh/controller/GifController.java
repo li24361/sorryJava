@@ -58,7 +58,7 @@ public class GifController {
     }
 
     @ApiOperation(value = "获取gif并上传bucket", notes = "")
-    @RequestMapping(path = "/gif/qiniu")
+    @RequestMapping(path = "/gif/qcloud")
     public String renderGifAndUpload(@RequestBody Subtitles subtitles) throws Exception {
         String file = gifService.renderGif(subtitles);
         return qcloudService.upload(file);

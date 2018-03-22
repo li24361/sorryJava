@@ -41,7 +41,7 @@ public class QcloudService {
     public String upload (String localFilePath) {
         COSCredentials cred = new BasicCOSCredentials(accessKey, secretKey);
         // 2 设置bucket的区域, COS地域的简称请参照 https://cloud.tencent.com/document/product/436/6224
-        ClientConfig clientConfig = new ClientConfig(new Region("ap-beijing"));
+        ClientConfig clientConfig = new ClientConfig(new Region("ap-chengdu"));
         // 3 生成cos客户端
         COSClient cosClient = new COSClient(cred, clientConfig);
         // bucket的命名规则为{name}-{appid} ，此处填写的存储桶名称必须为此格式
