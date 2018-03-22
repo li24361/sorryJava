@@ -1,2 +1,1 @@
-# Convert line endings to LF (Line Feed)
-* text=auto
+*.html linguist-language=html
