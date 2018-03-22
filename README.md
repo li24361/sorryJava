@@ -15,6 +15,15 @@ sorry的java版本
 
 ![](http://ww1.sinaimg.cn/large/6efe8aa1ly1fphaxorc98j211i0nywku.jpg)
 
+
+# 安装步骤
+
+如果没有自己的服务器，可以去[腾讯云](https://cloud.tencent.com/redirect.php?redirect=1005&cps_key=886212e8dd391ab808f37dd99caa8afb)
+里面个人可以申请7天的服务器，如果你是学生，会有更大的惊喜。
+选用云服务器后，安装的时候选择7，即可体验
+
+基础环境需要[安装java](https://github.com/li24361/centos_install_common_software_toturial/blob/master/Java.md)
+
 centOS7下ffmpeg安装
 
 	yum install epel-release -y
@@ -27,7 +36,7 @@ centOS7下ffmpeg安装
 
     ~~yum install gifsicle~~
 
-centOS7安装字体
+centOS7安装字体,不安装这个，生成时候会报错
 
 	yum groupinstall "fonts"
 	
