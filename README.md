@@ -64,6 +64,7 @@ centOS7安装字体,不安装这个，生成时候会报错
 下载[template.mp4](http://118.24.58.55/sorry/template.mp4)跟[template.ftl](http://118.24.58.55/sorry/template.ftl)放进去
 
 拉取源码
+
 	git clone https://github.com/li24361/sorryJava.git
 	
 导入ide
