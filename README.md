@@ -46,9 +46,9 @@ centOS7安装字体,不安装这个，生成时候会报错
 <b>以上都是必须的</b>
 
 
-可以直接下载[sorry-java-1.0.0.jar](http://118.24.58.55/sorry-java-1.0.0.jar)
+可以直接下载[sorry-java-1.2.0.jar](http://p5m79jjxo.bkt.clouddn.com/sorry-java-1.2.0.jar)
 然后服务器上运行
-	nohup java -jar sorry-java-1.0.0.jar &
+	nohup java -jar sorry-java-1.2.0.jar &
 
 访问 http://ip:8888
 
@@ -66,7 +66,7 @@ windows下执行压制的时候，如果ass的路径是带有盘符的，会报�
 	cache.template.tempPath=/opt/site/cache/
 
 在自己的文件夹下建立sorry文件夹
-下载[template.mp4](http://118.24.58.55/sorry/template.mp4)跟[template.ftl](http://118.24.58.55/sorry/template.ftl)放进去
+下载[template.mp4](http://p5m79jjxo.bkt.clouddn.com/template.mp4)跟[template.ftl](http://p5m79jjxo.bkt.clouddn.com/template.ftl)放进去
 
 拉取源码
 
@@ -77,7 +77,7 @@ windows下执行压制的时候，如果ass的路径是带有盘符的，会报�
 打包并运行
 	
 	mvn package -DskipTests
-	java -jar sorry-java-1.0.0.jar
+	java -jar sorry-java-1.2.0.jar
 	
 访问 http://ip:8888
 	
