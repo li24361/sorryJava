@@ -43,16 +43,18 @@ centOS7安装字体,不安装这个，生成时候会报错
 在服务器上建立文件夹/opt/site/cache//
 下载[template.mp4](http://118.24.58.55/sorry/template.mp4)跟[template.ftl](http://118.24.58.55/sorry/template.ftl)放进去
 
-<b>以上都是必须的<b>
+<b>以上都是必须的</b>
 
 
 可以直接下载[sorry-java-1.0.0.jar](http://118.24.58.55/sorry-java-1.0.0.jar)
 然后服务器上运行
 	nohup java -jar sorry-java-1.0.0.jar &
 
+访问 http://ip:8888
 
 
 
+### windows环境下
 自己研究代码的时候，windos下面需要安装jdk&maven&git&ffmpeg
 修改application.properties,换成自己电脑的文件夹
 
