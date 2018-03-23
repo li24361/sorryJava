@@ -41,7 +41,7 @@ centOS7安装字体,不安装这个，生成时候会报错
 	yum groupinstall "fonts"
 
 在服务器上建立文件夹/opt/site/cache//
-下载[template.mp4](http://118.24.58.55/sorry/template.mp4)跟[template.ftl](http://118.24.58.55/sorry/template.ftl)放进去
+下载[template.mp4](http://p5m79jjxo.bkt.clouddn.com/template.mp4)跟[template.ftl](http://p5m79jjxo.bkt.clouddn.com/template.ftl)放进去
 
 <b>以上都是必须的</b>
 
