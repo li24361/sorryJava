@@ -55,8 +55,11 @@ centOS7安装字体,不安装这个，生成时候会报错
 
 
 ### windows环境下
+windows下执行压制的时候，如果ass的路径是带有盘符的，会报错，可以改成读取相对路径
 自己研究代码的时候，windos下面需要安装jdk&maven&git&ffmpeg
+
 记得将ffmpeg 配置到Path下 添加E:\ffmpeg\bin; 这里要换成你的路径
+
 
 修改application.properties,换成自己电脑的文件夹，例如D:/
 
