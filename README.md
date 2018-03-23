@@ -58,7 +58,7 @@ centOS7安装字体,不安装这个，生成时候会报错
 自己研究代码的时候，windos下面需要安装jdk&maven&git&ffmpeg
 记得将ffmpeg 配置到Path下 添加E:\ffmpeg\bin; 这里要换成你的路径
 
-修改application.properties,换成自己电脑的文件夹
+修改application.properties,换成自己电脑的文件夹，例如D:/
 
 	cache.template.tempPath=/opt/site/cache/
 
