@@ -364,12 +364,12 @@
                 alert("生成成功！快去看看吧！");
 				$('#download').attr('href', msg.result);
 			} else {
-				alert("服务器爆掉了，请稍后再试！赞赏给作者点鼓励吧。");
-				$('#result').attr('src', 'http://p5m79jjxo.bkt.clouddn.com/money.jpg');
+				alert("服务器爆掉了，请稍后再试！");
+//				$('#result').attr('src', 'http://p5m79jjxo.bkt.clouddn.com/money.jpg');
 			}
 		}).error(function (jqxhr, textStatus, errorThrown) {
 			alert("服务器爆掉了，请稍后再试！赞赏给作者点鼓励吧。");
-			$('#result').attr('src', 'http://p5m79jjxo.bkt.clouddn.com/money.jpg');
+//			$('#result').attr('src', 'http://p5m79jjxo.bkt.clouddn.com/money.jpg');
 		}).complete(function () {
 			$btn.button('reset')
 			$('#render').prop('disabled', false);
