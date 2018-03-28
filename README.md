@@ -32,11 +32,7 @@ centOS7下ffmpeg安装
     yum install ffmpeg ffmpeg-devel -y
 
 
-~~centOS7 gifsicle 压缩gif~~，暂时不适用，待后续优化
-
-    ~~yum install gifsicle~~
-
-centOS7安装字体,不安装这个，生成时候会报错
+centOS7安装字体,生成中文字幕需要，否则生成时候会报错
 
 	yum groupinstall "fonts"
 
