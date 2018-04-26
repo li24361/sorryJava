@@ -7,7 +7,7 @@
 * 将文件剥离出程序，可以动态切换
 
 
-[Demo点击查看](http://118.24.58.55/)
+[Demo点击查看](http://txtxtx.com.cn)
 
 # sorryJava
 sorry的java版本
