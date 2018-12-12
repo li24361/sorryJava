@@ -37,12 +37,12 @@ centOS7安装字体,生成中文字幕需要，否则生成时候会报错
 	yum groupinstall "fonts"
 
 在服务器上建立文件夹/opt/site/cache/sorry
-下载[template.mp4](http://p5m79jjxo.bkt.clouddn.com/template.mp4)跟[template.ftl](http://p5m79jjxo.bkt.clouddn.com/template.ftl)放进去
+下载[template.mp4](http://cdn.txtxtx.com.cn/template.mp4)跟[template.ftl](http://cdn.txtxtx.com.cn/template.ftl)放进去
 
 <b>以上都是必须的</b>
 
 
-可以直接下载[sorry-java-1.2.0.jar](http://p5m79jjxo.bkt.clouddn.com/sorry-java-1.2.0.jar)
+可以直接下载[sorry-java-1.2.0.jar](http://cdn.txtxtx.com.cn/sorry-java-1.2.0.jar)
 然后服务器上运行
 	nohup java -jar sorry-java-1.2.0.jar &
 
@@ -62,7 +62,7 @@ windows下执行压制的时候，如果ass的路径是带有盘符的，会报�
 	cache.template.tempPath=/opt/site/cache/
 
 在自己的文件夹下建立sorry文件夹
-下载[template.mp4](http://p5m79jjxo.bkt.clouddn.com/template.mp4)跟[template.ftl](http://p5m79jjxo.bkt.clouddn.com/template.ftl)放进去
+下载[template.mp4](http://cdn.txtxtx.com.cn/template.mp4)跟[template.ftl](http://cdn.txtxtx.com.cn/template.ftl)放进去
 
 拉取源码
 
