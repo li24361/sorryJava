@@ -81,16 +81,19 @@ windows下执行压制的时候，如果ass的路径是带有盘符的，会报�
 ### macos
 通过brew安装ffmpeg
   
-  $ brew install ffmpeg
+	brew install ffmpeg
 
 在mac系统终端命令行里直接执行ffmpeg没有问题，但用java调用就生成gif报错。
 原因是ffmpeg在linux的shell命令行下当然能执行（如果ffmpeg在/usr/bin下），但java调用的时候并不是shell模式，所以不能直接执行
 
 解决办法：
 请用完整的ffmpeg路径，另外需要使用shell命令执行。代码示例如下：
-Process exec = Runtime.getRuntime().exec(new String[]{"sh", "-c", cmd}); exec.waitFor();
-以上cmd变量第一个字符（参数）必须是ffmpeg的系统安装路径，获得此路径：
-$ which ffmpeg
+
+	Process exec = Runtime.getRuntime().exec(new String[]{"sh", "-c", cmd}); exec.waitFor();
+以上cmd变量第一个字符（参数）必须是ffmpeg的系统安装路径，
+
+获得此路径：
+	which ffmpeg
 
 
 
