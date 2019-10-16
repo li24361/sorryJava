@@ -32,7 +32,7 @@ sorry的java版本
 clone代码后,进入到sorry-java目录下执行
 
     docker build -t sorry-java:v1.4 .
-    docker run --rm -it -p 8888:8888 sorry-java:v1.4
+    docker run --rm -itd --name sorryjava -e QCLOUD_ENABLE=false  -p 8888:8888 sorry-java:v1.4
 
     
 
