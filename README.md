@@ -18,14 +18,6 @@ sorry的java版本
 
 # 安装步骤
 
-
-
-如果没有自己的服务器，可以去[腾讯云](https://cloud.tencent.com/redirect.php?redirect=1005&cps_key=886212e8dd391ab808f37dd99caa8afb)
-里面个人可以申请7天的服务器，如果你是学生，会有更大的惊喜。
-选用云服务器后，安装的时候选择7，然后按照下面步骤配好centos环境。
-
-基础环境需要[安装java](https://github.com/li24361/centos_install_common_software_toturial/blob/master/Java.md)
-
 ### docker (推荐)
 首先安装 docker,不会的请自行百度
 
@@ -37,6 +29,13 @@ clone代码后,进入到sorry-java目录下执行
  访问 http://localhost;8888   
 
 ### centos 
+
+如果没有自己的服务器，可以去[腾讯云](https://cloud.tencent.com/redirect.php?redirect=1005&cps_key=886212e8dd391ab808f37dd99caa8afb)
+里面个人可以免费申请7天的服务器，如果你是学生，会有更大的惊喜。现在[双十一搞活动](https://cloud.tencent.com/act/double11/reserve?fromSource=gwzcw.3000744.3000744.3000744&utm_medium=cpc&utm_id=gwzcw.3000744.3000744.3000744&from=console&cps_key=886212e8dd391ab808f37dd99caa8afb&spread_hash_key=RfuqSZ)，88一年，很划算。
+选用云服务器后，安装的时候选择7，然后按照下面步骤配好centos环境。
+
+基础环境需要[安装java](https://github.com/li24361/centos_install_common_software_toturial/blob/master/Java.md)
+
 centOS7下ffmpeg安装
 
 	yum install epel-release -y
