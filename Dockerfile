@@ -4,6 +4,8 @@ WORKDIR /opt/site
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.ustc.edu.cn/g' /etc/apk/repositories
 RUN apk upgrade -U \
  && apk add ffmpeg libva-intel-driver \
+ && mkdir -p /usr/share/fonts/wenquanyi/ \
+ && apk add wqy-zenhei --update-cache --repository http://nl.alpinelinux.org/alpine/edge/testing --allow-untrusted \
  && rm -rf /var/cache/* \
  && mkdir /opt/site/log \
  && mkdir /opt/site/cache
