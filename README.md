@@ -19,9 +19,14 @@ sorry的java版本
 # 安装步骤
 
 ### docker (推荐)
-首先安装 docker,不会的请自行百度
+首先安装 docker,不会的安装请自行百度
 
-clone代码后,进入到sorry-java目录下执行
+
+clone代码
+	
+	git clone https://github.com/li24361/sorryJava.git
+	
+后,进入到sorry-java目录下执行
 
     docker build -t sorry-java:v1.4 .
     docker run --rm -itd --name sorryjava -e QCLOUD_ENABLE=false  -p 8888:8888 sorry-java:v1.4
