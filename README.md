@@ -10,10 +10,9 @@
 [Demo点击查看](http://txtxtx.com.cn)
 
 # sorryJava
-sorry的java版本
+sorry的java版本 操作演示
 
-
-![](http://ww1.sinaimg.cn/large/6efe8aa1ly1fphaxorc98j211i0nywku.jpg)
+![](https://github.com/li24361/sorryJava/blob/master/sorry-min.gif)
 
 
 # 安装步骤
