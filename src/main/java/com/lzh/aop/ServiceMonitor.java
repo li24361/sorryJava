@@ -32,7 +32,7 @@ public class ServiceMonitor {
         }
         long end = System.currentTimeMillis();
         long elapsedMilliseconds = end - start;
-        logger.info(fullMethodName + "执行耗时:" + elapsedMilliseconds + " 毫秒");
+        logger.info(fullMethodName + "执行耗时！！！！:" + elapsedMilliseconds + " 毫秒");
         return result;
     }
 
